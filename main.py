@@ -1,7 +1,4 @@
-import code
 import os
-import shutil
-import sys
 import time
 from pathlib import Path
 
@@ -14,11 +11,14 @@ cls = lambda : os.system("cls")
 cls()
 try:
     user_set_url = str(input(">"))
-    page_to_scrap = requests.get(user_set_url)
-    soup = bs4(page_to_scrap.text, "html.parser")
+
 except:
+    # I DONT KNOW WHAT TO DO HERE. i tried to make it a function but then soup NEEDS to be globol so i put it globle BUT NOOOOOOoo aperently thats not globole and im losing my mine so now its just a BIG MASSIVE error and closeing the program. 
     print("error\nplease enter a link\n\n\n\nOH NO\nsystem has crashed please restart the APP\n\n\n\n\n\n\n")
 def main():
+
+    page_to_scrap = requests.get(user_set_url)
+    soup = bs4(page_to_scrap.text, "html.parser")
 
     while True:
         title = soup.find("h1")
@@ -48,10 +48,11 @@ def main():
     time.sleep(5)
     cls()
 
+    # this is only here for develment. THIS WILL NO BE HERE ON THE RELEASE
     while True:
         print("the program has ended")
         print("close the program")
-        time.sleep(1)
+        time.sleep(999)
         cls()
 
 
