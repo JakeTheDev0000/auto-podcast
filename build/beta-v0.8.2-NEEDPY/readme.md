@@ -24,7 +24,7 @@ what may come:
 
 # 
 
-latest version beta 0.8.2 pre-relese 
+version 0.8.1 beta
 
 
 
